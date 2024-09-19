@@ -1,8 +1,8 @@
-/* استيراد خط جميل */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* استيراد خط عربي جميل */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cairo', sans-serif;
     background: linear-gradient(135deg, #f5f5f5, #e2e2e2);
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ header {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE0fHxjb250ZXh0fGVufDB8fHx8MTY0NzQzOTIwOQ&ixlib=rb-1.2.1&q=80&w=1080');
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47b3a7b57d8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDMyfHxjb250ZXh0fGVufDB8fHx8MTY0NzQ0MTk0Ng&ixlib=rb-1.2.1&q=80&w=1080');
     background-size: cover;
     background-position: center;
 }
@@ -24,7 +24,7 @@ header {
 h1 {
     font-size: 2.5em;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7), 0 0 25px rgba(0, 123, 255, 0.7);
 }
 
 /* تنسيق المحتوى الرئيسي */
@@ -64,11 +64,17 @@ footer {
 
 /* إضافة صورة خلفية للمحتوى */
 main {
-    background-image: url('https://images.unsplash.com/photo-1588501350643-7d9f6e6b0ef9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDkwfHxjaGF0fGVufDB8fHx8MTY0NzQ0MDAzNw&ixlib=rb-1.2.1&q=80&w=1080');
+    background-image: url('https://images.unsplash.com/photo-1504386109625-39b0a4c1971c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHByb2dyYW1taW5nfGVufDB8fHx8MTY0NzQ0MjIwMw&ixlib=rb-1.2.1&q=80&w=1080');
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 40px; /* زيادة المسافة */
     margin-top: 20px; /* مساحة بين الهيدر والمحتوى */
+}
+
+/* تنسيق النص ليكون لامع */
+h1, p {
+    color: #ffffff; /* لون النص */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(0, 123, 255, 0.9);
 }
