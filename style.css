@@ -1,55 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+/* استيراد خط جميل */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* الخلفية الفخمة بتدرجات الألوان */
 body {
-    font-family: 'Cinzel', serif;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
-    color: white;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f5f5, #e2e2e2);
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-/* إضافة لمعان للنص */
-h1 {
-    font-size: 3em;
+/* تنسيق الهيدر */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
     text-align: center;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE0fHxjb250ZXh0fGVufDB8fHx8MTY0NzQzOTIwOQ&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* تنسيق المحتوى الرئيسي */
+main {
+    padding: 20px;
 }
 
 /* تنسيق الأزرار */
 button, a {
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    background-color: #28a745;
     color: white;
-    padding: 15px 30px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 50px;
-    font-size: 1.2em;
+    border-radius: 30px; /* جعل الزر دائري */
+    text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* تأثير التحويم مع البريق */
+/* تأثير التحويم على الأزرار */
 button:hover, a:hover {
-    box-shadow: 0 0 20px rgba(255, 75, 43, 0.8), 0 0 40px rgba(255, 65, 108, 0.6);
-    transform: scale(1.05);
+    background-color: #218838;
+    transform: scale(1.05); /* تكبير الزر قليلاً عند التحويم */
 }
 
-/* تنسيق التذييل */
+/* تنسيق الفوتر */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background-color: #343a40;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    font-size: 1em;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* إضافة صورة خلفية للمحتوى */
+main {
+    background-image: url('https://images.unsplash.com/photo-1588501350643-7d9f6e6b0ef9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDkwfHxjaGF0fGVufDB8fHx8MTY0NzQ0MDAzNw&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* زيادة المسافة */
+    margin-top: 20px; /* مساحة بين الهيدر والمحتوى */
 }
