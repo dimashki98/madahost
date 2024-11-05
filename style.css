@@ -160,3 +160,40 @@ footer {
         width: 90%; /* عرض العناصر على الجوالات */
     }
 }
+
+
+/* قسم المشاريع */
+#projects {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 200px;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.05);
+}
+
+.project p {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
