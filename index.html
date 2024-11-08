@@ -50,33 +50,34 @@
         </div>
     </section>
 
-    <!-- قسم المشاريع -->
     <section id="projects">
-        <h2>مشاريعنا</h2>
-        <div class="projects-container">
-            <!-- المشروع الأول -->
-            <div class="project">
-                <a href="https://madahost.online" target="_blank">
-                    <img src="https://www3.0zz0.com/2024/11/05/14/411630332.jpg" alt="شات مدى">
-                </a>
-                <p>شات مدى</p>
-            </div>
-
-            <!-- المشروع الثاني -->
-            <div class="project">
-                <a href="https://rooh.life" target="_blank">
-                    <img src="https://www3.0zz0.com/2024/11/05/14/121413201.jpg" alt="شات حياة الروح">
-                </a>
-                <p>شات حياة الروح</p>
-            </div>
+    <h2>مشاريعنا</h2>
+    <div class="projects-container">
+        <!-- المشروع الأول -->
+        <div class="project">
+            <img src="https://www3.0zz0.com/2024/11/05/14/411630332.jpg" alt="شات مدى" onclick="openModal(this, 'https://madahost.online')">
+            <p>شات مدى</p>
         </div>
-    </section>
-<!-- المشروع الثالث -->
-<div class="project">
-    <a href="https://r7shq.com" target="_blank">
-        <img src="https://www2.0zz0.com/2024/11/08/17/797866608.jpg" alt="شات رحيق الحب">
-    </a>
-    <p>شات رحيق الحب</p>
+
+        <!-- المشروع الثاني -->
+        <div class="project">
+            <img src="https://www3.0zz0.com/2024/11/05/14/121413201.jpg" alt="شات حياة الروح" onclick="openModal(this, 'https://rooh.life')">
+            <p>شات حياة الروح</p>
+        </div>
+
+        <!-- المشروع الثالث -->
+        <div class="project">
+            <img src="https://www2.0zz0.com/2024/11/08/17/797866608.jpg" alt="شات رحيق الحب" onclick="openModal(this, 'https://r7shq.com')">
+            <p>شات رحيق الحب</p>
+        </div>
+    </div>
+</section>
+
+<!-- النافذة المنبثقة للصور -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <a id="modalLink" href="#" target="_blank" class="modal-btn">اضغط هنا للذهاب للموقع</a>
 </div>
     <section id="contact">
         <h2>تواصل معنا</h2>
