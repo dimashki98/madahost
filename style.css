@@ -45,12 +45,12 @@ nav ul li a {
 }
 
 #hero h1 {
-    font-size: 3rem; /* تقليل حجم الخط */
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
 #hero p {
-    font-size: 1.2rem; /* تقليل حجم الخط */
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
@@ -84,7 +84,7 @@ nav ul li a {
 }
 
 section {
-    padding: 30px; /* تقليل الحشوة */
+    padding: 30px;
     text-align: center;
 }
 
@@ -99,8 +99,8 @@ section {
 
 .services-container {
     display: flex;
-    justify-content: center; /* مركزة العناصر */
-    flex-wrap: wrap; /* السماح بتغيير الصفوف */
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 30px;
 }
 
@@ -108,9 +108,9 @@ section {
     background: #f3f4f6;
     padding: 20px;
     border-radius: 10px;
-    width: 90%; /* عرض العناصر 90% */
-    max-width: 300px; /* أقصى عرض */
-    margin: 10px; /* إضافة مسافة بين العناصر */
+    width: 90%;
+    max-width: 300px;
+    margin: 10px;
 }
 
 .service h3 {
@@ -127,11 +127,11 @@ section {
 }
 
 img {
-    max-width: 100%; /* تضمن أن الصورة لن تتجاوز عرض الصفحة */
-    height: auto; /* الحفاظ على نسب العرض إلى الارتفاع */
-    margin-top: 20px; /* إضافة مسافة بين الصورة والنص */
-    border-radius: 10px; /* إضافة زوايا مستديرة للصورة */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للصورة */
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -144,23 +144,22 @@ footer {
 /* تحسينات للجوالات */
 @media (max-width: 768px) {
     #hero h1 {
-        font-size: 2.5rem; /* تصغير حجم العنوان */
+        font-size: 2.5rem;
     }
 
     #hero p {
-        font-size: 1rem; /* تصغير النص */
+        font-size: 1rem;
     }
 
     .cta-btn, .whatsapp-btn {
-        font-size: 1rem; /* تصغير حجم الأزرار */
-        padding: 8px 16px; /* تقليل الحشوة */
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 
     .service {
-        width: 90%; /* عرض العناصر على الجوالات */
+        width: 90%;
     }
 }
-
 
 /* قسم المشاريع */
 #projects {
@@ -186,6 +185,7 @@ footer {
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .project img:hover {
@@ -196,4 +196,63 @@ footer {
     margin-top: 8px;
     font-weight: bold;
     font-size: 1.1em;
+}
+
+/* تصميم النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* تصميم الصورة داخل النافذة */
+.modal-content {
+    max-width: 90%;
+    max-height: 70%;
+    margin-bottom: 10px;
+}
+
+/* زر إغلاق النافذة */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* تصميم زر الذهاب إلى الموقع */
+.modal-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-btn:hover {
+    background-color: #e68900;
+}
+
+/* للتأكد من عرض النافذة بشكل جيد على الجوال */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        max-width: 80%;
+        max-height: 60%;
+    }
+    .modal-btn {
+        font-size: 16px;
+    }
 }
