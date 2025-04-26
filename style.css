@@ -1,260 +1,443 @@
-{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease;
+  direction: rtl;
 }
 
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 body {
-font-family: 'Almarai', sans-serif;
-background-color: #f3f4f6;
-color: #333;
-line-height: 1.6;
+  background: #f7f7f7;
+  font-family: 'Almarai', sans-serif;
+  color: #333;
 }
 
+*::selection {
+  background: #420177;
+  color: #fff;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgb(235, 202, 245);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #420177;
+}
+
+/* Header & Navigation */
 header {
-background: #333;
-color: #fff;
-padding: 1rem 0;
-text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 10%;
+  height: 6.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
 }
 
-nav ul {
-list-style: none;
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav ul li {
-display: inline;
-margin: 0 15px;
+header nav ul li {
+  margin-left: 2.5rem;
 }
 
-nav ul li a {
-color: #fff;
-text-decoration: none;
-font-size: 1.2rem;
+header nav ul li a {
+  font-size: 1.8rem;
+  color: #420177;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s;
+  padding: 0.5rem 0;
 }
 
+header nav ul li a:hover {
+  color: #ff7b00;
+  border-bottom: 0.2rem solid #ff7b00;
+}
+
+/* Hero Section */
 #hero {
-height: 100vh;
-background: url('https://up6.cc/2024/09/17268313401141.jpg') no-repeat center center/cover;
-color: #fff;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 6.5rem;
+  background: linear-gradient(to bottom, #420177, #6a11cb);
+  color: #fff;
 }
 
 #hero h1 {
-font-size: 3rem;
-margin-bottom: 20px;
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
 }
 
 #hero p {
-font-size: 1.2rem;
-margin-bottom: 30px;
+  font-size: 2rem;
+  max-width: 70%;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
 }
 
 .cta-btn {
-background: #007bff;
-color: #fff;
-padding: 10px 20px;
-border-radius: 25px;
-text-decoration: none;
-font-size: 1.2rem;
-transition: background 0.3s ease;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: #ff7b00;
+  border-radius: 5rem;
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+  transition: 0.3s;
 }
 
 .cta-btn:hover {
-background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 123, 0, 0.6);
 }
 
-.whatsapp-btn {
-background-color: #25d366;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-padding: 10px 20px;
-font-size: 1.2rem;
-border-radius: 25px;
-color: white;
+/* About Section */
+#about {
+  padding: 8rem 10%;
+  background: #fff;
+  text-align: center;
 }
 
-.whatsapp-btn:hover {
-background-color: #1ebe55;
+#about h2, #services h2, #projects h2, #contact h2 {
+  font-size: 3.5rem;
+  color: #420177;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
 }
 
-section {
-padding: 30px;
-text-align: center;
+#about h2::after, #services h2::after, #projects h2::after, #contact h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50%;
+  height: 0.3rem;
+  background: #ff7b00;
 }
 
-#about, #services {
-background-color: #fff;
+#about p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: justify;
 }
 
-#contact {
-background-color: #333;
-color: #fff;
+#about .owner {
+  font-weight: 700;
+  color: #ff7b00;
+  margin-bottom: 3rem;
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+/* Services Section */
+#services {
+  padding: 8rem 10%;
+  background: #f8f9fa;
+  text-align: center;
 }
 
 .services-container {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .service {
-background: #f3f4f6;
-padding: 20px;
-border-radius: 10px;
-width: 90%;
-max-width: 300px;
-margin: 10px;
+  flex: 1 1 30rem;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .service h3 {
-font-size: 1.5rem;
-margin-bottom: 15px;
+  font-size: 2.2rem;
+  color: #420177;
+  margin-bottom: 1.5rem;
 }
 
-.owner {
-color: #007bff;
-font-size: 1.2rem;
-text-align: center;
-margin-top: 20px;
-animation: pulse 1.5s infinite;
+.service p {
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
-img {
-max-width: 100%;
-height: auto;
-margin-top: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-background: #333;
-color: #fff;
-text-align: center;
-padding: 10px 0;
-}
-
-/* تحسينات للجوالات */
-@media (max-width: 768px) {
-#hero h1 {
-font-size: 2.5rem;
-}
-
-#hero p {  
-    font-size: 1rem;  
-}  
-
-.cta-btn, .whatsapp-btn {  
-    font-size: 1rem;  
-    padding: 8px 16px;  
-}  
-
-.service {  
-    width: 90%;  
-}
-
-}
-
-/* قسم المشاريع */
+/* Projects Section */
 #projects {
-text-align: center;
-padding: 20px;
-background-color: #f9f9f9;
+  padding: 8rem 10%;
+  background: #fff;
+  text-align: center;
 }
 
 .projects-container {
-display: flex;
-justify-content: center;
-gap: 20px;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .project {
-width: 200px;
-text-align: center;
+  flex: 1 1 30rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
-width: 100%;
-height: auto;
-border-radius: 8px;
-transition: transform 0.3s ease;
-cursor: pointer;
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .project img:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .project p {
-margin-top: 8px;
-font-weight: bold;
-font-size: 1.1em;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #420177;
+  background: #fff;
 }
 
-/* تصميم النافذة المنبثقة */
+/* Modal */
 .modal {
-display: none;
-position: fixed;
-z-index: 10;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.8);
-align-items: center;
-justify-content: center;
-text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* تصميم الصورة داخل النافذة */
 .modal-content {
-max-width: 90%;
-max-height: 70%;
-margin-bottom: 10px;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  max-height: 70vh;
+  object-fit: contain;
 }
 
-/* زر إغلاق النافذة */
 .close {
-position: absolute;
-top: 20px;
-right: 30px;
-color: white;
-font-size: 30px;
-cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-/* تصميم زر الذهاب إلى الموقع */
+.close:hover,
+.close:focus {
+  color: #ff7b00;
+  text-decoration: none;
+}
+
 .modal-btn {
-display: inline-block;
-padding: 10px 20px;
-background-color: #ff9800;
-color: white;
-font-size: 18px;
-border-radius: 5px;
-text-decoration: none;
-font-weight: bold;
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: #ff7b00;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
 .modal-btn:hover {
-background-color: #e68900;
+  background: #420177;
+  transform: scale(1.05);
 }
 
-/* للتأكد من عرض النافذة بشكل جيد على الجوال */
-@media screen and (max-width: 600px) {
-.modal-content {
-max-width: 80%;
-max-height: 60%;
+/* Contact Section */
+#contact {
+  padding: 8rem 10%;
+  background: linear-gradient(to bottom, #420177, #6a11cb);
+  text-align: center;
+  color: #fff;
 }
-.modal-btn {
-font-size: 16px;
+
+#contact h2 {
+  color: #fff;
 }
+
+#contact h2::after {
+  background: #ff7b00;
+}
+
+#contact p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+}
+
+.whatsapp-btn::before {
+  content: '\f232';
+  font-family: 'Font Awesome 5 Brands';
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  
+  header {
+    padding: 1.5rem 5%;
+  }
+  
+  section {
+    padding: 8rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.3s linear;
+  }
+  
+  header nav.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  header nav ul {
+    display: block;
+    padding: 2rem 0;
+  }
+  
+  header nav ul li {
+    margin: 1.5rem 2rem;
+  }
+  
+  #menu-btn {
+    display: inline-block;
+  }
+  
+  .services-container,
+  .projects-container {
+    gap: 2rem;
+  }
+  
+  .service,
+  .project {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .service,
+  .project {
+    flex: 1 1 100%;
+  }
+  
+  #hero p {
+    max-width: 90%;
+  }
+  
+  .modal-content {
+    width: 95%;
+  }
 }
