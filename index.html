@@ -1,88 +1,279 @@
-<!DOCTYPE html>  <html lang="ar">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>دمــشق هوست - استضافة مميزة</title>  
-    <link rel="stylesheet" href="style.css">  
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&display=swap" rel="stylesheet">  
-</head>  
-<body>  
-    <header>  
-        <nav>  
-            <ul>  
-                <li><a href="#about">عن دمــشق هوست</a></li>  
-                <li><a href="#services">خدماتنا</a></li>  
-                <li><a href="#projects">مشاريعنا</a></li>  
-                <li><a href="#contact">تواصل معنا</a></li>  
-            </ul>  
-        </nav>  
-    </header>  <section id="hero">  
-    <h1>مرحبًا بكم في دمــشق هوست</h1>  
-    <p>متخصصون في برمجة الشاتات الكتابية ومواقع الدردشة بأفضل التصاميم والستايلات.</p>  
-    <a href="#contact" class="cta-btn">تواصل معنا</a>  
-</section>  
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دمــشق هوست - استضافة مميزة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>دمــشق</span> هوست
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link">الرئيسية</a></li>
+                    <li><a href="#about" class="nav-link">من نحن</a></li>
+                    <li><a href="#services" class="nav-link">خدماتنا</a></li>
+                    <li><a href="#projects" class="nav-link">مشاريعنا</a></li>
+                    <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section id="about">  
-    <h2>من نحن</h2>  
-    <p>دمــشق هوست هي استضافة متخصصة في برمجة الشاتات الكتابية وتصميم مواقع الدردشة، بالإضافة إلى تصاميم وستايلات احترافية تناسب كافة المتطلبات.</p>  
-    <p class="owner">صاحب الاستضافة: محمد الدمشقي، والذي يتولى الاستفسارات والمزيد من المعلومات.</p>  
-    <img src="https://up6.cc/2024/09/172683147263251.jpg" alt="برمجة">  
-</section>  
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="دمــشق هوست">دمــشق هوست</h1>
+                <p class="subtitle">نبتكر تجارب رقمية استثنائية</p>
+                <p class="description">متخصصون في برمجة الشاتات الكتابية ومواقع الدردشة بأفضل التصاميم والستايلات</p>
+                <div class="cta-container">
+                    <a href="#contact" class="cta-btn primary">تواصل معنا</a>
+                    <a href="#projects" class="cta-btn secondary">استعرض أعمالنا</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="tech-sphere">
+                    <div class="sphere"></div>
+                    <div class="tech-icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-react"></i>
+                        <i class="fa-brands fa-node"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
 
-<section id="services">  
-    <h2>خدماتنا</h2>  
-    <div class="services-container">  
-        <div class="service">  
-            <h3>برمجة الشاتات</h3>  
-            <p>تطوير شاتات كتابية مخصصة لتلبية احتياجاتك.</p>  
-        </div>  
-        <div class="service">  
-            <h3>مواقع الدردشة</h3>  
-            <p>تصميم مواقع دردشة احترافية متوافقة مع جميع الأجهزة.</p>  
-        </div>  
-        <div class="service">  
-            <h3>تصاميم و ستايلات</h3>  
-            <p>تقديم تصاميم وستايلات فريدة تناسب مشروعك.</p>  
-        </div>  
-    </div>  
-</section>  
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">من نحن</span>
+                <h2 class="section-title">نبذة عن <span>دمــشق هوست</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>دمــشق هوست هي استضافة متخصصة في برمجة الشاتات الكتابية وتصميم مواقع الدردشة، بالإضافة إلى تصاميم وستايلات احترافية تناسب كافة المتطلبات.</p>
+                    <div class="owner-info">
+                        <div class="owner-avatar">
+                            <img src="https://up6.cc/2024/09/172683147263251.jpg" alt="محمد الدمشقي">
+                        </div>
+                        <div class="owner-details">
+                            <h3>محمد الدمشقي</h3>
+                            <p>مؤسس دمــشق هوست</p>
+                            <p>يتولى الاستفسارات والمزيد من المعلومات</p>
+                        </div>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">مشروع ناجح</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">عميل سعيد</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">سنوات خبرة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="https://up6.cc/2024/09/172683147263251.jpg" alt="برمجة">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="projects">  
-<h2>مشاريعنا</h2>  
-<div class="projects-container">  
-    <!-- المشروع الأول -->  
-    <div class="project">  
-        <img src="https://www3.0zz0.com/2024/11/05/14/411630332.jpg" alt="شات مدى" onclick="openModal(this, 'https://madahost.online')">  
-        <p>شات مدى</p>  
-    </div>  
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">خدماتنا</span>
+                <h2 class="section-title">ما <span>نقدمه</span> لكم</h2>
+            </div>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>برمجة الشاتات</h3>
+                    <p>تطوير شاتات كتابية مخصصة لتلبية احتياجاتك بأحدث التقنيات وأفضل الممارسات البرمجية.</p>
+                    <div class="service-hover">
+                        <a href="#contact" class="service-link">طلب الخدمة</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>مواقع الدردشة</h3>
+                    <p>تصميم مواقع دردشة احترافية متوافقة مع جميع الأجهزة وبتجربة مستخدم سلسة وممتعة.</p>
+                    <div class="service-hover">
+                        <a href="#contact" class="service-link">طلب الخدمة</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>تصاميم و ستايلات</h3>
+                    <p>تقديم تصاميم وستايلات فريدة تناسب مشروعك وتعكس هويتك البصرية بشكل احترافي.</p>
+                    <div class="service-hover">
+                        <a href="#contact" class="service-link">طلب الخدمة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- المشروع الثاني -->  
-    <div class="project">  
-        <img src="https://www3.0zz0.com/2024/11/05/14/121413201.jpg" alt="شات حياة الروح" onclick="openModal(this, 'https://rooh.life')">  
-        <p>شات حياة الروح</p>  
-    </div>  
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">مشاريعنا</span>
+                <h2 class="section-title">أحدث <span>أعمالنا</span></h2>
+            </div>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://www3.0zz0.com/2024/11/05/14/411630332.jpg" alt="شات مدى">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>شات مدى</h3>
+                                <a href="https://madahost.online" target="_blank" class="project-link">زيارة الموقع</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://www3.0zz0.com/2024/11/05/14/121413201.jpg" alt="شات حياة الروح">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>شات حياة الروح</h3>
+                                <a href="https://rooh.life" target="_blank" class="project-link">زيارة الموقع</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://www2.0zz0.com/2024/11/08/17/797866608.jpg" alt="شات رحيق الحب">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <h3>شات رحيق الحب</h3>
+                                <a href="https://r7shq.com" target="_blank" class="project-link">زيارة الموقع</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- المشروع الثالث -->  
-    <div class="project">  
-        <img src="https://www2.0zz0.com/2024/11/08/17/797866608.jpg" alt="شات رحيق الحب" onclick="openModal(this, 'https://r7shq.com')">  
-        <p>شات رحيق الحب</p>  
-    </div>  
-</div>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">تواصل معنا</span>
+                <h2 class="section-title">دعنا <span>نتحدث</span></h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>للاستفسار والمزيد من المعلومات، يمكنك التواصل مع محمد الدمشقي.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>واتساب</h3>
+                                <p>+974 5994 1949</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>البريد الإلكتروني</h3>
+                                <p>info@damascushost.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/97459941949" target="_blank" class="cta-btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+                    </a>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">الاسم</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">البريد الإلكتروني</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">الرسالة</label>
+                        </div>
+                        <button type="submit" class="cta-btn primary">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>  <!-- النافذة المنبثقة للصور -->  <div id="imageModal" class="modal">  
-    <span class="close" onclick="closeModal()">&times;</span>  
-    <img class="modal-content" id="modalImage">  
-    <a id="modalLink" href="#" target="_blank" class="modal-btn">اضغط هنا للذهاب للموقع</a>  
-</div>  
-    <section id="contact">  
-        <h2>تواصل معنا</h2>  
-        <p>للاستفسار والمزيد من المعلومات، يمكنك التواصل مع محمد الدمشقي.</p>  
-        <a href="https://wa.me/97459941949" target="_blank" class="cta-btn whatsapp-btn">تواصل عبر واتساب</a>  
-    </section>  <footer>  
-    <p>© 2025 جميع الحقوق محفوظة | دمــشق هوست</p>  
-</footer>  
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>دمــشق</span> هوست
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 جميع الحقوق محفوظة | دمــشق هوست</p>
+            </div>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
-
-</body>  
+    <script src="script.js"></script>
+</body>
 </html>
