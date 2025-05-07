@@ -1,61 +1,160 @@
-// Modal functionality
-function openModal(img, url) {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const modalLink = document.getElementById("modalLink");
-    
-    modal.style.display = "block";
-    modalImg.src = img.src;
-    modalLink.href = url;
-}
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+const links = document.querySelectorAll('a');
+const buttons = document.querySelectorAll('button');
 
-function closeModal() {
-    document.getElementById("imageModal").style.display = "none";
-}
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    
+    setTimeout(() => {
+        cursorFollower.style.left = e.clientX + 'px';
+        cursorFollower.style.top = e.clientY + 'px';
+    }, 100);
+});
 
-// Close modal when clicking outside the image
-window.onclick = function(event) {
-    const modal = document.getElementById("imageModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+document.addEventListener('mousedown', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    cursorFollower.style.transform = 'translate(-50%, -50%) scale(0.8)';
+});
 
-// Add responsive navigation menu for mobile
-document.addEventListener('DOMContentLoaded', function() {
-    // Add menu button for mobile
-    const header = document.querySelector('header');
-    const nav = document.querySelector('nav');
-    
-    const menuBtn = document.createElement('div');
-    menuBtn.id = 'menu-btn';
-    menuBtn.innerHTML = '☰';
-    menuBtn.style.fontSize = '3rem';
-    menuBtn.style.cursor = 'pointer';
-    menuBtn.style.display = 'none';
-    
-    header.insertBefore(menuBtn, nav);
-    
-    menuBtn.addEventListener('click', function() {
-        nav.classList.toggle('active');
+document.addEventListener('mouseup', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+});
+
+links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursorFollower.style.borderColor = 'var(--primary-color)';
     });
     
-    // Check window width and adjust menu button visibility
-    function checkWidth() {
-        if (window.innerWidth <= 768) {
-            menuBtn.style.display = 'inline-block';
-        } else {
-            menuBtn.style.display = 'none';
-            nav.classList.remove('active');
-        }
-    }
-    
-    // Initial check
-    checkWidth();
-    
-    // Check on resize
-    window.addEventListener('resize', checkWidth);
+    link.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorFollower.style.borderColor = 'var(--primary-color)';
+    });
 });
+
+buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    
+    button.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+});
+
+// Header scroll effect
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
+});
+
+// Active nav link on scroll
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const scrollPosition = window.scrollY;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Stats counter animation
+const stats = document.querySelectorAll('.stat-number');
+let counted = false;
+
+function countUp() {
+    if (counted) return;
+    
+    stats.forEach(stat => {
+        const target = +stat.getAttribute('data-count');
+        const count = +stat.innerText;
+        const increment = target / 100;
+        
+        if (count < target) {
+            stat.innerText = Math.ceil(count + increment);
+            setTimeout(countUp, 20);
+        } else {
+            stat.innerText = target;
+        }
+    });
+}
+
+window.addEventListener('scroll', () => {
+    const statsSection = document.querySelector('.stats-container');
+    if (!statsSection) return;
+    
+    const statsSectionTop = statsSection.offsetTop;
+    const statsSectionHeight = statsSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > statsSectionTop - windowHeight + statsSectionHeight / 2) {
+        counted = true;
+        countUp();
+    }
+});
+
+// Form validation
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Simple form validation
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (name && email && message) {
+            // Here you would typically send the form data to a server
+            alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.');
+            contactForm.reset();
+        } else {
+            alert('يرجى ملء جميع الحقول المطلوبة.');
+        }
+    });
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -63,16 +162,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         
         const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        if (targetId === '#') return;
         
+        const targetElement = document.querySelector(targetId);
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 65, // Adjust for header height
+                top: targetElement.offsetTop - 80,
                 behavior: 'smooth'
             });
-            
-            // Close mobile menu if open
-            document.querySelector('nav').classList.remove('active');
         }
     });
 });
+
+// Reveal animations on scroll
+const revealElements = document.querySelectorAll('.section-header, .service-card, .project-card, .stat-item, .contact-method');
+
+function reveal() {
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('revealed');
+        }
+    });
+}
+
+window.addEventListener('scroll', reveal);
+reveal(); // Initial check on page load
